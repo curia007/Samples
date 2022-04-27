@@ -7,10 +7,31 @@
 
 import SwiftUI
 
-struct ServiceView: View {
+struct ServiceView {
+    @StateObject private var request = Request()
+    @State private var searchTerm = ""
+}
+
+extension ServiceView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        VStack {
+          TextField("Enter Search Term",
+                    text: $searchTerm)
+            .multilineTextAlignment(.center)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+          List(request.results) {result in
+            HStack {
+              request.images[result.name].map(Image.init(uiImage:))
+              GeneralSearchDetailsView(generalDetails: result)
+            }
+          }
+          
+        }
+        .onChange(of: searchTerm){ newSearchTerm in
+          request.searchTerm = newSearchTerm
+        }
+      }
 }
 
 struct ServiceView_Previews: PreviewProvider {
@@ -18,3 +39,4 @@ struct ServiceView_Previews: PreviewProvider {
         ServiceView()
     }
 }
+
