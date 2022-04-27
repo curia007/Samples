@@ -13,7 +13,7 @@ var iTunesURLBase: URLComponents {
   urlComponents.host = "itunes.apple.com"
   urlComponents.path = "/search"
   urlComponents.queryItems
-    = [URLQueryItem(name: "entity", value: "software"),
+    = [URLQueryItem(name: "entity", value: "movie"),
        URLQueryItem(name: "limit", value: "10")]
   return urlComponents
 }

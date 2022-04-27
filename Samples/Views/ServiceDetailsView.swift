@@ -16,11 +16,11 @@ extension GeneralSearchDetailsView: View {
       Text(generalDetails.name)
         .font(.headline)
       HStack {
-        Text(Int(generalDetails.rating.rounded()).description)
+        Text("$" + Int(generalDetails.price.rounded()).description)
           .foregroundColor(.secondary)
           .font(.largeTitle)
         Spacer()
-        Text(generalDetails.sellerName).font(.footnote)
+        Text(generalDetails.artistName).font(.footnote)
       }
     }
   }

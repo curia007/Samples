@@ -37,7 +37,6 @@ struct TableContentsView: View {
                     }
                 }
             }
-            Text("Select an item")
         }
     }
 

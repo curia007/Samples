@@ -27,7 +27,7 @@ extension Request {
     $searchTerm
       .dropFirst()
       .debounce(for: 0.25,
-                scheduler: RunLoop.current)
+                scheduler: RunLoop.main)
       .removeDuplicates()
       .map(applyFormatting)
       .compactMap(iTunesURL)
@@ -61,7 +61,7 @@ extension Request {
           }
           .resume()
         }
-        .receive(on: RunLoop.current)
+        .receive(on: RunLoop.main)
         .map {image in
           self?.images[result.name] = image
           return

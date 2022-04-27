@@ -12,13 +12,13 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            TableContentsView()
-                .tabItem {
-                    Label("Menu", systemImage: "list.dash")
-                }
             ServiceView()
                 .tabItem {
-                    Label("Service", systemImage: "square.and.pencil")
+                    Label("Service", systemImage: "cloud")
+                }
+            TableContentsView()
+                .tabItem {
+                    Label("Menu", systemImage: "doc.text")
                 }
         }
     }

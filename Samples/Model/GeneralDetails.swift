@@ -15,15 +15,15 @@ struct SearchResults: Codable {
 struct GeneralDetails: Codable, Identifiable {
     let id = UUID()
     let name: String
-    let rating: Double
+    let price: Float
     let artworkURL: URL
-    let sellerName: String
+    let artistName: String
     
     enum CodingKeys: String, CodingKey {
-        case name = "trackCensoredName"
-        case rating = "averageUserRatingForCurrentVersion"
+        case name = "trackName"
+        case price = "collectionHdPrice"
         case artworkURL = "artworkUrl60"
-        case sellerName
+        case artistName = "artistName"
     }
 }
 
@@ -31,8 +31,8 @@ extension GeneralDetails: CustomStringConvertible {
     var description: String {
         return """
         \n\n name: \(name)
-        \t rating: \(Int(rating))
-        \t sellerName: \(sellerName)
+        \t price: \(Float(price))
+        \t sellerName: \(artistName)
         """
     }
 }
