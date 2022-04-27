@@ -21,9 +21,9 @@ struct GeneralDetails: Codable, Identifiable {
     
     enum CodingKeys: String, CodingKey {
         case name = "trackName"
-        case price = "collectionHdPrice"
+        case price = "collectionPrice"
         case artworkURL = "artworkUrl60"
-        case artistName = "artistName"
+        case artistName 
     }
 }
 
@@ -32,7 +32,7 @@ extension GeneralDetails: CustomStringConvertible {
         return """
         \n\n name: \(name)
         \t price: \(Float(price))
-        \t sellerName: \(artistName)
+        \t artistName: \(artistName)
         """
     }
 }
