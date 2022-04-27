@@ -159,6 +159,7 @@
 		C0B234572819B4B800D7C59E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C0B2349A2819C7F700D7C59E /* GeneralDetails.swift */,
 				C0B2349E2819CAC700D7C59E /* Request.swift */,
 				C0B234302819B4A100D7C59E /* Persistence.swift */,
 				C0B234322819B4A100D7C59E /* Samples.xcdatamodeld */,
@@ -169,7 +170,6 @@
 		C0B234992819C7BE00D7C59E /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				C0B2349A2819C7F700D7C59E /* GeneralDetails.swift */,
 				C0B2349B2819C7F700D7C59E /* iTunesURLSupport.swift */,
 			);
 			path = Support;
