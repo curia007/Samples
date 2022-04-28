@@ -17,6 +17,8 @@ struct ServiceDetail: Codable, Identifiable {
     let name: String
     let price: Float
     let artworkURL: URL
+    let largeArtworkURL : URL
+    let previewURL : URL
     let artistName: String
     let kind: String
     let itemDescription: String
@@ -25,6 +27,8 @@ struct ServiceDetail: Codable, Identifiable {
         case name = "trackName"
         case price = "collectionPrice"
         case artworkURL = "artworkUrl60"
+        case largeArtworkURL = "artworkUrl100"
+        case previewURL = "previewUrl"
         case kind = "kind"
         case itemDescription = "longDescription"
         case artistName 

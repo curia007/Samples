@@ -40,7 +40,7 @@ extension Request {
               decoder: JSONDecoder())
       .map(\.results)
       .catch {error in
-        Just([ServiceDetail]())
+          Just([ServiceDetail]())
       }
       .receive(on: RunLoop.main)
       .assign(to: &$results)

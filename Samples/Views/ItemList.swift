@@ -22,13 +22,17 @@ extension ItemList: View {
             NavigationView {
                 List(request.results) {result in
                     NavigationLink {
-                        ServiceDetailView(item: result)
+                        let images : [String : UIImage] = request.images
+                        ServiceDetailView(item: result, images: images)
                     } label: {
                         request.images[result.name].map(Image.init(uiImage:))
                         ItemRow(item : result)
                     }
                 }
+                .navigationBarHidden(true)
+                .padding(.horizontal, -15.0)
             }
+            .navigationViewStyle(.stack)
             .onChange(of: searchTerm){ newSearchTerm in
                 request.searchTerm = newSearchTerm
             }

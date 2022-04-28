@@ -5,30 +5,43 @@
 //  Created by Carmelo Uria on 4/26/22.
 //
 import SwiftUI
+import AVKit
 
 struct ServiceDetailView {
-  let item: ServiceDetail
+    let item: ServiceDetail
+    let images: [String : UIImage]
 }
 
 extension ServiceDetailView: View {
     var body: some View {
-        VStack (alignment: .leading) {
-            HStack {
-                Text("Name: ")
+        VStack(alignment: .leading) {
+            HStack(spacing: 1) {
+                VideoPlayer(player: AVPlayer(url: item.previewURL))
+                    .frame(alignment: .center)
+                    .padding()
+            }
+            .frame(alignment: .top)
+            Divider()
+            HStack() {
+                Text("Name")
                 Text(item.name)
                     .font(.headline)
             }
-            HStack {
+            Spacer()
+            Divider()
+            HStack (alignment: .top) {
                 Text("About")
-                    .padding()
                 Text(item.itemDescription).font(.footnote)
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .padding()
     }
 }
 
 struct ServiceDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ServiceDetailView(item: ServiceDetail(name: "Carmelo Uria", price: 10.00, artworkURL: URL(string: "https://test")!, artistName: "artist Name", kind: "feature-film", itemDescription: "Item Description"))
+        let images = [String : UIImage]()
+        ServiceDetailView(item: ServiceDetail(name: "Carmelo Uria", price: 10.0, artworkURL: URL(string: "https:\\test")!, largeArtworkURL: URL(string: "https:\\test")!, previewURL: URL(string: "https:\\")!, artistName: "artist name", kind: "feature-film", itemDescription: "Item Description"), images: images)
     }
 }
