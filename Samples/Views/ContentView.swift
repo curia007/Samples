@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            ServiceView()
+            ItemList()
                 .tabItem {
                     Label("Service", systemImage: "cloud")
                 }

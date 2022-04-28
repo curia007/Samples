@@ -12,7 +12,7 @@ import UIKit.UIImage
 class Request: ObservableObject
 {
   private var cancellables = Set<AnyCancellable>()
-  @Published private(set) var results = [GeneralDetails]()
+  @Published private(set) var results = [ServiceDetail]()
   @Published var searchTerm = ""
   @Published var images = [String: UIImage]()
   
@@ -40,7 +40,7 @@ extension Request {
               decoder: JSONDecoder())
       .map(\.results)
       .catch {error in
-        Just([GeneralDetails]())
+        Just([ServiceDetail]())
       }
       .receive(on: RunLoop.main)
       .assign(to: &$results)
