@@ -15,10 +15,10 @@ struct SearchResults: Codable {
 struct ServiceDetail: Codable, Identifiable {
     let id = UUID()
     let name: String
-    let price: Float
+    var price: Float?
     let artworkURL: URL
     let largeArtworkURL : URL
-    let previewURL : URL
+    var previewURL : URL?
     let artistName: String
     let kind: String
     let itemDescription: String
@@ -39,7 +39,7 @@ extension ServiceDetail: CustomStringConvertible {
     var description: String {
         return """
         \n\n name: \(name)
-        \t price: \(Float(price))
+        \t price: \(Float(price ?? 0.0))
         \t artistName: \(artistName)
         """
     }

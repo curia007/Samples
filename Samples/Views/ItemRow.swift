@@ -15,7 +15,7 @@ struct ItemRow: View {
           Text(item.name)
             .font(.headline)
           HStack {
-            Text("$" + Int(item.price.rounded()).description)
+              Text("$" + Int(item.price?.rounded() ?? 0.0).description)
               .foregroundColor(.secondary)
               .font(.largeTitle)
             Spacer()

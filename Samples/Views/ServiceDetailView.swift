@@ -16,9 +16,12 @@ extension ServiceDetailView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack(spacing: 1) {
-                VideoPlayer(player: AVPlayer(url: item.previewURL))
+                if (item.previewURL != nil)
+                {
+                    VideoPlayer(player: AVPlayer(url: item.previewURL!))
                     .frame(alignment: .center)
                     .padding()
+                }
             }
             .frame(alignment: .top)
             Divider()

@@ -18,7 +18,7 @@ struct ContentView: View {
                 }
             TableContentsView()
                 .tabItem {
-                    Label("Table", systemImage: "doc.text")
+                    Label("Notes", systemImage: "doc.text")
                 }
         }
     }

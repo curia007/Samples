@@ -31,6 +31,9 @@ extension ItemList: View {
                 }
                 .navigationBarHidden(true)
                 .padding(.horizontal, -15.0)
+                .refreshable {
+                    request.reset()
+                }
             }
             .navigationViewStyle(.stack)
             .onChange(of: searchTerm){ newSearchTerm in

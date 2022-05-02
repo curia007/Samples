@@ -23,53 +23,60 @@ class Request: ObservableObject
 }
 
 extension Request {
-  private func resultsPipeline() {
-    $searchTerm
-      .dropFirst()
-      .debounce(for: 0.25,
-                scheduler: RunLoop.main)
-      .removeDuplicates()
-      .map(applyFormatting)
-      .compactMap(iTunesURL)
-      .flatMap {url in
-        URLSession.shared
-          .dataTaskPublisher(for: url)
-      }
-      .map(\.data)
-      .decode(type: SearchResults.self,
-              decoder: JSONDecoder())
-      .map(\.results)
-      .catch {error in
-          Just([ServiceDetail]())
-      }
-      .receive(on: RunLoop.main)
-      .assign(to: &$results)
-  }
-  
-  private func imagesPipeline() {
-    $results
-      .dropFirst()
-      .flatMap{results in
-               results.publisher}
-      .flatMap {[weak self] result  in
-        Future<UIImage?, Never> {promise in
-          URLSession.shared
-            .dataTask(with: result.artworkURL) { data, _, _ in
-            if let image = data.map(UIImage.init(data:)) {
-              promise(.success(image))
+    func reset()
+    {
+        searchTerm = ""
+        resultsPipeline()
+        imagesPipeline()
+    }
+    
+    private func resultsPipeline() {
+        $searchTerm
+            .dropFirst()
+            .debounce(for: 0.25,
+                      scheduler: RunLoop.main)
+            .removeDuplicates()
+            .map(applyFormatting)
+            .compactMap(iTunesURL)
+            .flatMap {url in
+                URLSession.shared
+                    .dataTaskPublisher(for: url)
             }
-          }
-          .resume()
-        }
-        .receive(on: RunLoop.main)
-        .map {image in
-          self?.images[result.name] = image
-          return
-        }
-      }
-      .sink{}
-      .store(in: &cancellables)
-  }
+            .map(\.data)
+            .decode(type: SearchResults.self,
+                    decoder: JSONDecoder())
+            .map(\.results)
+            .catch {error in
+                Just([ServiceDetail]())
+            }
+            .receive(on: RunLoop.main)
+            .assign(to: &$results)
+    }
+    
+    private func imagesPipeline() {
+        $results
+            .dropFirst()
+            .flatMap{results in
+                results.publisher}
+            .flatMap {[weak self] result  in
+                Future<UIImage?, Never> {promise in
+                    URLSession.shared
+                        .dataTask(with: result.artworkURL) { data, _, _ in
+                            if let image = data.map(UIImage.init(data:)) {
+                                promise(.success(image))
+                            }
+                        }
+                        .resume()
+                }
+                .receive(on: RunLoop.main)
+                .map {image in
+                    self?.images[result.name] = image
+                    return
+                }
+            }
+            .sink{}
+            .store(in: &cancellables)
+    }
 
 }
 
