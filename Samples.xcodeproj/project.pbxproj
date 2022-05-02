@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0774A9B2820401E002C71C1 /* NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0774A9A2820401E002C71C1 /* NoteDetailView.swift */; };
+		C0774A9D282041B1002C71C1 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0774A9C282041B1002C71C1 /* Error.swift */; };
 		C0B234282819B4A100D7C59E /* SamplesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B234272819B4A100D7C59E /* SamplesApp.swift */; };
 		C0B2342A2819B4A100D7C59E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B234292819B4A100D7C59E /* ContentView.swift */; };
 		C0B2342C2819B4A100D7C59E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0B2342B2819B4A100D7C59E /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C0774A9A2820401E002C71C1 /* NoteDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteDetailView.swift; sourceTree = "<group>"; };
+		C0774A9C282041B1002C71C1 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		C0B234242819B4A100D7C59E /* Samples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Samples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0B234272819B4A100D7C59E /* SamplesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplesApp.swift; sourceTree = "<group>"; };
 		C0B234292819B4A100D7C59E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 		C0B234562819B4B000D7C59E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C0774A9A2820401E002C71C1 /* NoteDetailView.swift */,
 				C0B234A02819CC2C00D7C59E /* ServiceDetailView.swift */,
 				C0B234292819B4A100D7C59E /* ContentView.swift */,
 				C0B234582819B53500D7C59E /* TableContentsView.swift */,
@@ -165,6 +170,7 @@
 		C0B234572819B4B800D7C59E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C0774A9C282041B1002C71C1 /* Error.swift */,
 				C0B2349A2819C7F700D7C59E /* ServiceDetail.swift */,
 				C0B2349E2819CAC700D7C59E /* Request.swift */,
 				C0B234302819B4A100D7C59E /* Persistence.swift */,
@@ -320,8 +326,10 @@
 				C0B2349C2819C7F700D7C59E /* ServiceDetail.swift in Sources */,
 				C0B234342819B4A100D7C59E /* Samples.xcdatamodeld in Sources */,
 				C0B2342A2819B4A100D7C59E /* ContentView.swift in Sources */,
+				C0774A9B2820401E002C71C1 /* NoteDetailView.swift in Sources */,
 				C0B2345B2819B7E200D7C59E /* ItemList.swift in Sources */,
 				C0B2349F2819CAC700D7C59E /* Request.swift in Sources */,
+				C0774A9D282041B1002C71C1 /* Error.swift in Sources */,
 				C0B234282819B4A100D7C59E /* SamplesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

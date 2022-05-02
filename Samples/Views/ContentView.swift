@@ -14,7 +14,7 @@ struct ContentView: View {
         TabView {
             ItemList()
                 .tabItem {
-                    Label("Service", systemImage: "cloud")
+                    Label("Films", systemImage: "film")
                 }
             TableContentsView()
                 .tabItem {
