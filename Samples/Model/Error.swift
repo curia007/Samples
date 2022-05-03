@@ -7,6 +7,8 @@
 
 import Foundation
 
+// Basic Swift Error definition
+
 struct Error : LocalizedError
 {
     var description : String = ""

@@ -12,6 +12,8 @@ struct SearchResults: Codable {
     let results: [ServiceDetail]
 }
 
+// ServiceDetail:  defines the results of the URLSession provider
+
 struct ServiceDetail: Codable, Identifiable {
     let id = UUID()
     let name: String
@@ -22,6 +24,8 @@ struct ServiceDetail: Codable, Identifiable {
     let artistName: String
     let kind: String
     let itemDescription: String
+    
+    // coding transformations
     
     enum CodingKeys: String, CodingKey {
         case name = "trackName"
@@ -35,6 +39,7 @@ struct ServiceDetail: Codable, Identifiable {
     }
 }
 
+// Can combine several strings into one string
 extension ServiceDetail: CustomStringConvertible {
     var description: String {
         return """
@@ -45,7 +50,7 @@ extension ServiceDetail: CustomStringConvertible {
     }
 }
 
-
+// Creates a description of the result count and its results
 extension SearchResults: CustomStringConvertible {
     var description: String {
         return "\(resultCount) results \n \(results)\n"

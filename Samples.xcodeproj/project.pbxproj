@@ -24,7 +24,6 @@
 		C0B2349D2819C7F700D7C59E /* iTunesURLSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2349B2819C7F700D7C59E /* iTunesURLSupport.swift */; };
 		C0B2349F2819CAC700D7C59E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B2349E2819CAC700D7C59E /* Request.swift */; };
 		C0B234A12819CC2C00D7C59E /* ServiceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B234A02819CC2C00D7C59E /* ServiceDetailView.swift */; };
-		C0B234A32819F26800D7C59E /* ServiceDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B234A22819F26800D7C59E /* ServiceDescriptionView.swift */; };
 		C0B234A72819FA9800D7C59E /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B234A62819FA9800D7C59E /* ItemRow.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +65,6 @@
 		C0B2349B2819C7F700D7C59E /* iTunesURLSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesURLSupport.swift; sourceTree = "<group>"; };
 		C0B2349E2819CAC700D7C59E /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		C0B234A02819CC2C00D7C59E /* ServiceDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceDetailView.swift; sourceTree = "<group>"; };
-		C0B234A22819F26800D7C59E /* ServiceDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDescriptionView.swift; sourceTree = "<group>"; };
 		C0B234A62819FA9800D7C59E /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,7 +159,6 @@
 				C0B234292819B4A100D7C59E /* ContentView.swift */,
 				C0B234582819B53500D7C59E /* TableContentsView.swift */,
 				C0B2345A2819B7E200D7C59E /* ItemList.swift */,
-				C0B234A22819F26800D7C59E /* ServiceDescriptionView.swift */,
 				C0B234A62819FA9800D7C59E /* ItemRow.swift */,
 			);
 			path = Views;
@@ -322,7 +319,6 @@
 				C0B2349D2819C7F700D7C59E /* iTunesURLSupport.swift in Sources */,
 				C0B234A72819FA9800D7C59E /* ItemRow.swift in Sources */,
 				C0B234312819B4A100D7C59E /* Persistence.swift in Sources */,
-				C0B234A32819F26800D7C59E /* ServiceDescriptionView.swift in Sources */,
 				C0B2349C2819C7F700D7C59E /* ServiceDetail.swift in Sources */,
 				C0B234342819B4A100D7C59E /* Samples.xcdatamodeld in Sources */,
 				C0B2342A2819B4A100D7C59E /* ContentView.swift in Sources */,

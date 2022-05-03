@@ -9,6 +9,7 @@ import Combine
 import Foundation
 import UIKit.UIImage
 
+// Request is a URLSession Provider.  It defines how that URL is called and how the http results are sent to the subcribers
 class Request: ObservableObject
 {
   private var cancellables = Set<AnyCancellable>()

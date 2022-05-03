@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// List and Detail view of entity Note
 struct TableContentsView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -20,7 +21,10 @@ struct TableContentsView: View {
             List {
                 ForEach(notes) { note in
                     NavigationLink {
-                        Text("Item at \(note.timestamp!, formatter: itemFormatter)")
+                        Text("Note at \(note.timestamp!, formatter: itemFormatter)")
+                        Text("id: \(note.id?.uuidString ?? "unknown")")
+                        Text("subject: \(note.subject ?? "unknown")")
+                        Text("note: \(note.note ?? "unknown")")
                     } label: {
                         Text(note.timestamp!, formatter: itemFormatter)
                         Text(note.subject ?? "unknown")

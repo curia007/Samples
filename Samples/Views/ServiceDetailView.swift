@@ -7,6 +7,8 @@
 import SwiftUI
 import AVKit
 
+// The web service detail view, specific to the 'movie' type from the url request
+
 struct ServiceDetailView {
     let item: ServiceDetail
     let images: [String : UIImage]

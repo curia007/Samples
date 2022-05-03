@@ -7,6 +7,7 @@
 
 import CoreData
 
+// Generic Persistence controller.  It defines which persistence container to use
 struct PersistenceController {
     static let shared = PersistenceController()
 

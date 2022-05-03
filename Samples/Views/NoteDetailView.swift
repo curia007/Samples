@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Basic detail view that allows input to be added into the entity
 struct NoteDetailView: View {
     @ObservedObject var viewModel: NoteDetailModel
 
@@ -47,6 +48,10 @@ struct NoteDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
     }
     
+}
+
+extension NoteDetailView {
+    
     private func addItem() {
         withAnimation {
             let newNote = Note(context: viewContext)
@@ -66,7 +71,6 @@ struct NoteDetailView: View {
             }
         }
     }
-    
 }
 
 class NoteDetailModel: ObservableObject {
@@ -105,30 +109,7 @@ extension Alert {
     }
 }
 
-enum LoginError: LocalizedError {
-    case incorrectPassword // invalidUserName etc
-    
-    var errorDescription: String? {
-        switch self {
-        case .incorrectPassword:
-            return "Failed logging in account"
-        }
-    }
-    
-    var failureReason: String? {
-        switch self {
-        case .incorrectPassword:
-            return "Entered password was incorrect"
-        }
-    }
-    
-    var recoverySuggestion: String? {
-        switch self {
-        case .incorrectPassword:
-            return "Please try again with different password"
-        }
-    }
-}
+
 struct NoteDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NoteDetailView(viewModel: NoteDetailModel())

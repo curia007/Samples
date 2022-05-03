@@ -12,6 +12,7 @@ struct ItemList {
     @State private var searchTerm = ""
 }
 
+// Main View for the iTunes web service
 extension ItemList: View {
     var body: some View {
         VStack {
